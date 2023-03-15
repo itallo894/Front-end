@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de testes</title>
+    <script src="Js\vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Formulario de Cadastro</h1>
+        <form>
+            <label for="nomecompleto">NomeCompleto</label>
+            <input name="nomecompleto" type="text" v-model="form.nome">
+
+            <label for="Email">Email</label>
+            <input name="Email" type="text" v-model="form.email">
+
+            <label for="Nota">Nota</label>
+            <input name="Nota" type="text" v-model="form.Nota">
+
+            <input type="button" value="Cadastrar" @click="adicionarAluno">
+
+        </form>
+
+
+        <div>
+            <table class="table">
+                <thead>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Nota</th>
+                    <th>Ações</th>
+                </thead>
+                <tbody>
+                    <tr v-for="aluno in alunos">
+                        <td>{{aluno.nome}}</td>
+                        <td>{{aluno.email}}</td>
+                        <td>{{aluno.Nota}}</td>
+                        <td>
+                            <button class="danger" @click="apagarAluno(aluno)">Apagar</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                form: {
+                    nome: '',
+                    email: '',
+                    Nota: ''
+
+                },
+                alunos: []
+            },
+            methods: {
+                limpaFormulario: function () {
+                    this.form = {
+                        nome: '',
+                        email: '',
+                        Nota: ''
+                    }
+                },
+                adicionarAluno: function () {
+                    this.alunos.push(this.form)
+                    this.limpaFormulario()
+                },
+                apagarAluno: function (aluno) {
+                    var posicao = this.alunos.indexOf(aluno)
+                    this.alunos.splice(posicao, 1)
+
+
+                }
+            }
+        })
+    </script>
+    <style>
+        .table {
+            margin-top: 20px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .table th,
+        .table td {
+            border-top: 1px solid #d88d8d;
+        }
+
+        input {
+            display: block;
+        }
+
+        input[type=button] {
+            margin-top: 10px;
+            background-color: darkred;
+            border-color: darkred;
+            color: antiquewhite;
+            font-size: medium;
+
+        }
+
+        .table th:last-child,
+        .table td:last-child {
+            text-align: right;
+        }
+
+        .danger {
+            background-color: red;
+            border-color: red;
+            color: blanchedalmond;
+        }
+    </style>
+
+</body>
+
+</html>
