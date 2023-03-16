@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgb(155, 219, 198);
+            text-align: center;
+        }
+        #quadro1{
+            background-color: black;
+            position: absolute;
+            top:60%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+        }
+        #Estados1{
+            background-color: black;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+        }
+        caption{color: white;}
+        td{
+        width: 100px;
+        margin: 1px;
+        height: 25px;
+        font-size: 15px;
+        background-color: rgb(141, 127, 127);
+        color: white;}
+        .tabela2{background-color: black;}
+        .estado{background-color: rgb(196, 196, 51);color: aliceblue;}
+        .sigla{background-color: green;color: aliceblue;}
+        .capital{background-color: blue;color: aliceblue;}
+        .capEstados{background-color: brown;}
+        th{background-color: rgb(117, 211, 211);}
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="quadro1">
+        <caption>Quadro 1 -modelo de quadro</caption>
+        <th>ÁREAS</th>
+        <th>UNICAMP</th>
+        <th>UNESP</th>
+        <th>USP</th>
+        <th>TOTAL</th>
+        <tr>
+            <td>Interdisciplinar</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Biólogicas e saúde</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Exatas e tecnológicas</td>
+            <td><table class="tabela2">
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </table></td>
+            <td>2</td>
+            <td>2</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Humanas e artes</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>TOTAL</td>
+            <td>8</td>
+            <td>8</td>
+            <td>8</td>
+            <td>24</td>
+        </tr>
+
+    </table>
+    <br>
+
+    <table id="Estados1">
+        <caption class="capEstados">Estados do Brasil</caption>
+        <th class="estado">Estado</th>
+        <th class="sigla">Sigla</th>
+        <th class="capital">Capital</th>
+        <tr>
+            <td>Distrito Federal</td>
+            <td>DF</td>
+            <td>Brasília</td>
+        </tr>
+        <tr>
+            <td>Píaui</td>
+            <td>PI</td>
+            <td>Teresina</td>
+        </tr>
+        <tr>
+            <td>Maranhão</td>
+            <td>MA</td>
+            <td>São Luis</td>
+        </tr>
+
+
+
+
+    </table>
+</body>
+
+</html>
