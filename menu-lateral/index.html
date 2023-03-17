@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style21.css">
+    <title>Menu lateral</title>
+</head>
+
+<body>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <img src="./imagens/images.png" alt="">
+    </label>
+    <nav>
+        <ul>
+            <li class="home"><a href="#">HOME</a></li>
+            <li class="novidades"><a href="#">NOVIDADES</a></li>
+            <li class="tutoriais"><a href="#">TUTORIAIS</a></li>
+            <li class="contato"><a href="#">CONTATO</a></li>
+            <li class="sobre"><a href="#">SOBRE</a></li>
+        </ul>
+    </nav>
+    <div class="fundo">
+
+        <div class="calculadora">
+            <h2>Calculadora</h2>
+            <p id="resultado"></p>
+            <table>
+                <tr>
+                    <td><button class="botao" onclick="clean()">C</button></td>
+                    <td><button class="botao" onclick="back()"><</td>
+                    <td><button class="botao" onclick="insert('/')">/</button></td>
+                    <td><button class="botao" onclick="insert('*')">x</button></td>
+                </tr>
+                <tr>
+                    <td><button class="botao" onclick="insert('7')">7</button></td>
+                    <td><button class="botao" onclick="insert('8')">8</button></td>
+                    <td><button class="botao" onclick="insert('9')">9</button></td>
+                    <td><button class="botao" onclick="insert('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="botao" onclick="insert('4')">4</button></td>
+                    <td><button class="botao" onclick="insert('5')">5</button></td>
+                    <td><button class="botao" onclick="insert('6')">6</button></td>
+                    <td><button class="botao" onclick="insert('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button class="botao" onclick="insert('1')">1</button></td>
+                    <td><button class="botao" onclick="insert('2')">2</button></td>
+                    <td><button class="botao" onclick="insert('3')">3</button></td>
+                    <td rowspan="2"><button class="botao" style="height: 106px;" onclick="calcular()">=</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="botao" style="width: 106px;" onclick="insert('0')">0</button></td>
+                    <td><button class="botao" onclick="insert('.')">.</button></td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+    <script>
+        function insert(num) {
+            var numero = document.getElementById('resultado').innerHTML;
+            document.getElementById('resultado').innerHTML = numero + num;
+
+        }
+        function clean() {
+            document.getElementById('resultado').innerHTML = "";
+        }
+        function back() {
+            var resultado = document.getElementById('resultado').innerHTML;
+            document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length - 1)
+        }
+
+        function calcular() {
+            var resultado = document.getElementById('resultado').innerHTML;
+            if (resultado) {
+                var resultado = document.getElementById('resultado').innerHTML = eval(resultado)
+
+            }
+            else {
+                document.getElementById('resultado').innerHTML = "nada...";
+            }
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
